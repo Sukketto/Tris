@@ -9,7 +9,7 @@ var _board = []
 @export var cell_scene : PackedScene = preload("res://scenes/Cell.tscn")
 @export var cell_spread : int = 100
 
-func _init():
+func _ready():
 	# Inizializzo la matrice di Cell
 	for i in range(-1,2):
 		_board.append([])
