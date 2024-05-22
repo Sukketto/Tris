@@ -5,6 +5,7 @@ class_name Board
 # Matrice di Cell, 3x3
 var _board = []
 @onready var content = $Content
+@onready var sprite = $Sprite2D
 
 @export var cell_scene : PackedScene = preload("res://scenes/Cell.tscn")
 @export var cell_spread : int = 100
@@ -17,7 +18,7 @@ func _ready():
 			var cell = cell_scene.instantiate()
 			cell.position = (Vector2(i, j)*cell.scale*cell_spread)
 			content.add_child(cell)
-			_board[i].append(cell)
+			_board[i+1].append(cell)
  
 func get_winner():
 	# Check for a winner in the rows, columns, and diagonals
@@ -40,3 +41,11 @@ func get_winner():
 		return _board[0][2].get_pedina_color()
 	return null
 
+func _process(delta):
+	var win = get_winner()
+	if win == Pedina.PedinaColor.ORANGE:
+		sprite.modulate = Color(1,0.5,0)
+	elif win == Pedina.PedinaColor.BLUE:
+		sprite.modulate = Color(0,0,1)
+	else:
+		sprite.modulate = Color(1,1,1)

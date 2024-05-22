@@ -1,8 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvpna5cl32k2f"]
+[gd_scene load_steps=4 format=3 uid="uid://dvpna5cl32k2f"]
 
 [ext_resource type="Script" path="res://scripts/board.gd" id="1_2k312"]
 
+[sub_resource type="Gradient" id="Gradient_1f45b"]
+offsets = PackedFloat32Array(0.0588235, 0.532872, 1)
+colors = PackedColorArray(1, 1, 0.847059, 1, 0.65098, 0.717647, 0.615686, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_chcic"]
+gradient = SubResource("Gradient_1f45b")
+
 [node name="Board" type="Node2D"]
 script = ExtResource("1_2k312")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4.75121, 4.68)
+texture = SubResource("GradientTexture2D_chcic")
 
 [node name="Content" type="Node2D" parent="."]

@@ -14,11 +14,11 @@ size = Vector2(44, 50)
 
 [node name="Pedina" type="Node2D"]
 modulate = Color(1, 0.5, 0, 1)
+z_index = 1
 script = ExtResource("1_1bptq")
 size = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 1
 scale = Vector2(0.71875, 0.78125)
 texture = SubResource("GradientTexture2D_ltj6y")
 
