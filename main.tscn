@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfc31sggf6f2r"]
+
+[ext_resource type="PackedScene" uid="uid://dvpna5cl32k2f" path="res://scenes/Board.tscn" id="1_lg5r2"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(573, 298)
+
+[node name="Board" parent="." instance=ExtResource("1_lg5r2")]
+cell_spread = 100

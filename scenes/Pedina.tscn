@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuyrluwkscqjh"]
+
+[ext_resource type="Script" path="res://scripts/pedina.gd" id="1_1bptq"]
+
+[sub_resource type="Gradient" id="Gradient_8njlx"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ltj6y"]
+gradient = SubResource("Gradient_8njlx")
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0.513761, 0.458716)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hae4h"]
+size = Vector2(44, 50)
+
+[node name="Pedina" type="Node2D"]
+modulate = Color(1, 0.5, 0, 1)
+script = ExtResource("1_1bptq")
+size = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.71875, 0.78125)
+texture = SubResource("GradientTexture2D_ltj6y")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hae4h")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

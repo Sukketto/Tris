@@ -11,8 +11,23 @@ config_version=5
 [application]
 
 config/name="TrisMaSiMangia"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+global="*res://scripts/global.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/copilot/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://scripts/": "red"
+}
 
 [rendering]
 
